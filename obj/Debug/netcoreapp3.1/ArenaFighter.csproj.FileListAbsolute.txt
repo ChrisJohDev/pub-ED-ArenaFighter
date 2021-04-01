@@ -1,0 +1,15 @@
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.exe
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.deps.json
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.runtimeconfig.json
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.runtimeconfig.dev.json
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.dll
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\ArenaFighter.pdb
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.csprojAssemblyReference.cache
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.AssemblyInfoInputs.cache
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.AssemblyInfo.cs
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.csproj.CoreCompileInputs.cache
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.csproj.CopyComplete
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.dll
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.pdb
+F:\Education\Lexicon\Programmerare .NET\Inlämningsuppgifter\01 CSharp\ArenaFighter\obj\Debug\netcoreapp3.1\ArenaFighter.genruntimeconfig.cache
