@@ -9,6 +9,8 @@ namespace ArenaFighter
         private static int _numberOfRounds = 0;
         private static Random _generator = new Random();
         private static RoundResult _result = new RoundResult();
+        private static Logger _logWriter = new Logger();
+        private static string _logPath = "";
 
         public static int NumberOfRounds
         {
@@ -17,6 +19,7 @@ namespace ArenaFighter
              
         public static RoundResult RollTheDice()
         {
+            string logData = "";
             do
             {
                 _result.UserScore = _generator.Next(1, 6);
@@ -27,6 +30,15 @@ namespace ArenaFighter
             _numberOfRounds++;
 
             // Write log entry!
+            logData = "Round," + _numberOfRounds.ToString() + "," + _result.UserScore.ToString() + "," + _result.ComputerScore.ToString();
+            if (_logPath != "")
+            {
+                _logWriter.WriteLog(logData,_logPath);
+            }
+            else
+            {
+                _logWriter.WriteLog(logData);
+            }
             return _result;
         }
 
@@ -34,34 +46,40 @@ namespace ArenaFighter
         {
             _numberOfRounds = 0;
         }
-    }
 
-    public struct RoundResult
-    {
-
-        public int UserScore { get; set; }
-        public int ComputerScore { get; set; }
-
-        public FightWinnerResult Winner
+        public string LogPath
         {
-            get
-            {
-                if (ComputerScore > UserScore)
-                {
-                    return FightWinnerResult.Computer;
-                }
-                else
-                {
-                    return FightWinnerResult.User;
-                }
-            }
+            get { return _logPath; }
+            set { _logPath = value; }
         }
 
-        public int DamageToInflict
+        public struct RoundResult
         {
-            get
+
+            public int UserScore { get; set; }
+            public int ComputerScore { get; set; }
+
+            public FightWinnerResult Winner
             {
-                return Math.Abs(UserScore - ComputerScore);
+                get
+                {
+                    if (ComputerScore > UserScore)
+                    {
+                        return FightWinnerResult.Computer;
+                    }
+                    else
+                    {
+                        return FightWinnerResult.User;
+                    }
+                }
+            }
+
+            public int DamageToInflict
+            {
+                get
+                {
+                    return Math.Abs(UserScore - ComputerScore);
+                }
             }
         }
     }

@@ -8,13 +8,13 @@ namespace ArenaFighter
     {
         private static int _numberOfBattles;
         private Character _computerFighter;
-        private RoundResult _result;
+        private Round.RoundResult _result;
 
         public Battle()
         {
             Round.ResetNumberOfRounds();
             this._computerFighter = new Character();
-            this._result = new RoundResult();
+            //this._result = new RoundResult();
         }
 
         public static void BattleCounterAddBattle()
