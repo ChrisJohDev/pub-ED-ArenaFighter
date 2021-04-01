@@ -34,7 +34,7 @@ namespace ArenaFighter
         }
         public void WriteLog(string logEntry, string logName)
         {
-            this._log.Path = logName;
+            this._log.LogName = logName;
             _ = this._log.WriteLog(logEntry);
         }
         public void WriteLog(string[] logEntry)
@@ -43,14 +43,15 @@ namespace ArenaFighter
         }
         public void WriteLog(string[] logEntry, string logName)
         {
-            this._log.Path = logName;
+            this._log.LogName = logName;
             _ = this._log.WriteLog(logEntry);
         }
 
 
         private protected class LogIo
         {
-            private string _path = @"../../../logs/";
+            private string _path;
+            private string _basePath = @"../../../logs/";
             private string _logName = "ArenaFighterDefaultLog.log";
             private string _logEntry;
             private string[] _logEntries = new string[0];
@@ -58,11 +59,11 @@ namespace ArenaFighter
 
             public LogIo()
             {
-                this._path += "fighterLog.log";
+                this._path = this._basePath + this._logName;
             }
             public LogIo(string fileName)
             {
-                this._path = fileName;
+                this._path = this._basePath + fileName;
             }
 
             public string Path
@@ -76,8 +77,9 @@ namespace ArenaFighter
             }
             public async Task WriteLog(string data)
             {
+                this._path = this._basePath + this._logName;
                 this._logEntry = DateTime.Now.ToString() + "," + data;
-                await File.AppendAllTextAsync(this._path + this._logName, this._logEntry, System.Text.Encoding.UTF8);
+                await File.AppendAllTextAsync(this._path, this._logEntry, System.Text.Encoding.UTF8);
             }
             public async Task WriteLog(string[] data)
             {
@@ -88,7 +90,8 @@ namespace ArenaFighter
                     this._logEntries[i] = DateTime.Now.ToString() + "," + entry;
                     i++;
                 }
-                await File.AppendAllLinesAsync(this._path + this._logName, data, System.Text.Encoding.UTF8);
+                this._path = this._basePath + this._logName;
+                await File.AppendAllLinesAsync(this._path, data, System.Text.Encoding.UTF8);
             }
         }
     }
@@ -103,7 +106,7 @@ namespace ArenaFighter
 
             foreach(string file in files)
             {
-                if (file.Substring(file.Length - 5, 4) == ".log")
+                if (file.Substring(file.Length - 4, 4) == ".log")
                 {
                     Console.Write("DELETE file: " + file+" Y/N ");
                     key = Console.ReadKey(false);

@@ -4,13 +4,12 @@ using System.Text;
 
 namespace ArenaFighter
 {
-    class Round
+    static class Round
     {
         private static int _numberOfRounds = 0;
         private static Random _generator = new Random();
         private static RoundResult _result = new RoundResult();
         private static Logger _logWriter = new Logger();
-        private static string _logPath = "";
 
         public static int NumberOfRounds
         {
@@ -30,27 +29,16 @@ namespace ArenaFighter
             _numberOfRounds++;
 
             // Write log entry!
-            logData = "Round," + _numberOfRounds.ToString() + "," + _result.UserScore.ToString() + "," + _result.ComputerScore.ToString();
-            if (_logPath != "")
-            {
-                _logWriter.WriteLog(logData,_logPath);
-            }
-            else
-            {
-                _logWriter.WriteLog(logData);
-            }
+            logData = "Round," + _numberOfRounds.ToString() + "," + _result.UserScore.ToString() + "," + _result.ComputerScore.ToString()+"\n";
+
+            _logWriter.WriteLog(logData, logFileName);
+            
             return _result;
         }
 
         public static void ResetNumberOfRounds()
         {
             _numberOfRounds = 0;
-        }
-
-        public string LogPath
-        {
-            get { return _logPath; }
-            set { _logPath = value; }
         }
 
         public struct RoundResult

@@ -43,18 +43,18 @@ namespace ArenaFighter
                 
                 Console.Write("\n\n\tStart a New Battle?  Y/N ");
                 key = Console.ReadKey();
+                this._battle = new Battle();
                 if (key.KeyChar.ToString().ToLower() == "n")
                 {
                     continueGame = false;
-                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " End";
+                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " End\n";
                 }
                 else
                 {
-                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " Start";
+                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " Start\n";
                 }
                 logName += this._battle.NumberOfBattles.ToString() + ".log";
                 this._logHandler.WriteLog(logEntry, logName);
-                this._battle = new Battle();
                 this._battle.StartBattle(ref refUserFighter, logName);
             }
         }
