@@ -8,6 +8,7 @@ namespace ArenaFighter
     {
         private Battle _battle;
         public Character userFighter;
+        private Logger _logHandler = new Logger();
 
         public void NewGame()
         {
@@ -34,17 +35,27 @@ namespace ArenaFighter
         {
             ConsoleKeyInfo key;
             bool continueGame = true;
+            string logName = "Battle_";
+            string logEntry;
 
             while (continueGame)
             {
-                this._battle = new Battle();
-                this._battle.StartBattle(ref refUserFighter);
+                
                 Console.Write("\n\n\tStart a New Battle?  Y/N ");
                 key = Console.ReadKey();
                 if (key.KeyChar.ToString().ToLower() == "n")
                 {
                     continueGame = false;
+                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " End";
                 }
+                else
+                {
+                    logEntry = "Battle " + this._battle.NumberOfBattles.ToString() + " Start";
+                }
+                logName += this._battle.NumberOfBattles.ToString() + ".log";
+                this._logHandler.WriteLog(logEntry, logName);
+                this._battle = new Battle();
+                this._battle.StartBattle(ref refUserFighter, logName);
             }
         }
     }

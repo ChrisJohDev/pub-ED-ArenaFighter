@@ -12,9 +12,7 @@ namespace ArenaFighter
 
         public Battle()
         {
-            Round.ResetNumberOfRounds();
             this._computerFighter = new Character();
-            //this._result = new RoundResult();
         }
 
         public static void BattleCounterAddBattle()
@@ -32,14 +30,14 @@ namespace ArenaFighter
             _numberOfBattles = 0;
         }
 
-        public void StartBattle(ref Character userFighter)
+        public void StartBattle(ref Character userFighter, string logFileName)
         {
             ConsoleKeyInfo key;
             Round.ResetNumberOfRounds();
             
             while (userFighter.Health > 0 && this._computerFighter.Health > 0)
             {
-                this._result = Round.RollTheDice();
+                this._result = Round.RollTheDice(logFileName);
                 
                 if(this._result.Winner == FightWinnerResult.User)
                 {

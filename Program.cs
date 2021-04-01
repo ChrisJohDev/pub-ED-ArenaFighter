@@ -16,6 +16,7 @@ namespace ArenaFighter
 
             if (key.KeyChar == '\r')
             {
+                DeleteLogs.DeleteAllLogs();
                 StartGame();
             }
         }

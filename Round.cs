@@ -17,7 +17,7 @@ namespace ArenaFighter
             get { return _numberOfRounds; }
         }
              
-        public static RoundResult RollTheDice()
+        public static RoundResult RollTheDice(string logFileName)
         {
             string logData = "";
             do
